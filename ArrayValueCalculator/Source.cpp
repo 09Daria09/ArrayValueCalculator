@@ -47,6 +47,7 @@ public:
 template <typename T, std::size_t m, std::size_t n>
 void ArrayValueCalculator::doCalc(T(&a)[m][n])
 {
+	cout << "_______________________________________________" << endl;
 	int sum = 0;
 	int cas;
 	int j = 0, i = 0, g;
@@ -74,7 +75,7 @@ void ArrayValueCalculator::doCalc(T(&a)[m][n])
 	{
 		throw new ArraySizeException();
 	}
-	cout << sum;
+	cout << "Summa->" << sum << endl;
 }
 int main()
 {
@@ -83,13 +84,14 @@ int main()
 						   {"5","6","7","8"},
 						   {"9","10","11","12"} };
 	string array[4][4] = { {"1","3","3","4"},
-						   {"5","6","r","8"},
+						   {"5","6","7","8"},
 						   {"9","10","11","12"},
 						   {"13","14","15","16"} };
 	ArrayValueCalculator a;
 	try
 	{
 		a.doCalc(array);
+		a.doCalc(array1);
 	}
 	catch (ArraySizeException* Exemption)
 	{
